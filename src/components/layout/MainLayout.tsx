@@ -12,7 +12,11 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <>
       <Header />
-      <Container component="main" maxWidth="lg" sx={{ mt: 8, mb: 4 }}>
+      <Container
+        component="main"
+        maxWidth="lg"
+        sx={{ minHeight: 'calc(100vh - 220px)', mt: 8, mb: 4 }}
+      >
         {children}
       </Container>
       <Footer />
