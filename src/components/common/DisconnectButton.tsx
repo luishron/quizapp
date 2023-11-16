@@ -1,13 +1,24 @@
+import styled from '@emotion/styled';
 import { IconButton } from '@mui/material';
+import { Theme } from '@mui/material/styles';
 import { MdLogout } from 'react-icons/md';
 import { useDisconnect } from 'wagmi';
+import theme from '../../theme/theme';
 
+const DisconnectIcon = styled(IconButton)(({ theme }: { theme: Theme }) => ({
+  color: theme.palette.text.primary,
+}));
 const DisconnectButton = () => {
   const { disconnect } = useDisconnect();
   return (
-    <IconButton aria-label="delete" onClick={() => disconnect()}>
+    <DisconnectIcon
+      theme={theme}
+      aria-label="delete"
+      color="primary"
+      onClick={() => disconnect()}
+    >
       <MdLogout />
-    </IconButton>
+    </DisconnectIcon>
   );
 };
 

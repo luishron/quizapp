@@ -4,7 +4,7 @@ import { Theme } from '@mui/material/styles';
 import theme from '../../theme/theme';
 
 const FooterSection = styled(Box)(({ theme }: { theme: Theme }) => ({
-  background: theme.palette.background.paper,
+  background: theme.palette.background.default,
   boxShadow: 'none',
 }));
 
@@ -16,7 +16,7 @@ const Footer = () => {
       sx={{
         padding: 2,
         textAlign: 'start',
-        borderTop: '1px solid rbga(225,225,225,01)',
+        borderTop: '1px solid rgba(0, 0, 0, 1)',
       }}
     >
       <Typography variant="body1">© 2023 QuizDapp</Typography>
