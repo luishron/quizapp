@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import { useEffect } from 'react';
 import { useNetwork, useSwitchNetwork } from 'wagmi';
 
@@ -22,7 +23,11 @@ const SwitchNetwork = () => {
   };
   return (
     <div>
-      {!isGoerli && <button onClick={changeToGoerli}>Cambiar a Goerli</button>}
+      {!isGoerli && (
+        <Button variant="contained" color="primary" onClick={changeToGoerli}>
+          Cambiar a Goerli
+        </Button>
+      )}
     </div>
   );
 };
