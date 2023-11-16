@@ -5,18 +5,18 @@ import { Theme } from '@mui/material/styles';
 import theme from '../../theme/theme';
 import Logo from './Logo';
 
-const StyledAppBar = styled(AppBar)(({ theme }: { theme: Theme }) => ({
+const Navbar = styled(AppBar)(({ theme }: { theme: Theme }) => ({
   background: theme.palette.background.paper,
   boxShadow: 'none',
 }));
 
 const Header = () => {
   return (
-    <StyledAppBar theme={theme} position="static">
+    <Navbar theme={theme} position="static">
       <Toolbar>
         <Logo />
       </Toolbar>
-    </StyledAppBar>
+    </Navbar>
   );
 };
 
