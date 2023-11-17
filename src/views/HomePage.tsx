@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <MainLayout>
       <Box>
-        <Typography variant="h2" component="h1">
+        <Typography variant="h2" component="h1" sx={{ fontWeight: 'bold' }}>
           Answer and Earn with QuizDapp
         </Typography>
         <Typography variant="h6" component="p">

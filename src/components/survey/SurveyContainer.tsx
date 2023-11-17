@@ -5,10 +5,8 @@ import SwitchNetwork from '../common/SwitchNetwork';
 import SurveyStep from './SurveyStep';
 
 const Container = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.light,
   padding: theme.spacing(3),
   borderRadius: '0.5em',
-  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
   minHeight: 'calc(80vh - 220px)',
   display: 'flex',
   flexDirection: 'row',

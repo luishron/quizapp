@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -41,7 +42,7 @@ const SurveyStep = () => {
 
   if (!surveyStarted) {
     return (
-      <Card sx={{ maxWidth: 400 }}>
+      <Card sx={{ display: 'flex' }}>
         <CardMedia
           component="img"
           alt="Survey Image"
@@ -49,24 +50,26 @@ const SurveyStep = () => {
           style={{ width: 'auto', height: '350px' }}
           title={title}
         />
-        <CardContent>
-          <Typography variant="h6" component="h3">
-            {title}
-          </Typography>
-          <Typography variant="body2" component="p">
-            {description}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={startSurvey}
-            endIcon={<FaAngleRight />}
-          >
-            Start survey
-          </Button>
-        </CardActions>
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <CardContent sx={{ flex: '1 0 auto' }}>
+            <Typography variant="h6" component="h3">
+              {title}
+            </Typography>
+            <Typography variant="body2" component="p">
+              {description}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={startSurvey}
+              endIcon={<FaAngleRight />}
+            >
+              Start survey
+            </Button>
+          </CardActions>
+        </Box>
       </Card>
     );
   }
@@ -76,7 +79,7 @@ const SurveyStep = () => {
   const isFirstQuestion = currentQuestion === 0;
 
   return (
-    <Card>
+    <Card sx={{ display: 'flex' }}>
       <CardMedia
         component="img"
         alt={currentQuestionData.text}
