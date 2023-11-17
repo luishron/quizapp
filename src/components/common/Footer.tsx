@@ -4,8 +4,8 @@ import { Theme } from '@mui/material/styles';
 import theme from '../../theme/theme';
 
 const FooterSection = styled(Box)(({ theme }: { theme: Theme }) => ({
-  background: theme.palette.background.default,
   boxShadow: 'none',
+  borderTop: `1px solid ${theme.palette.divider}`,
 }));
 
 const Footer = () => {

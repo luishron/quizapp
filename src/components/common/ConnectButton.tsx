@@ -9,7 +9,7 @@ const ConnectButton = () => {
       {connectors.map((connector) => (
         <Button
           variant="contained"
-          color="secondary"
+          color="primary"
           disabled={!connector.ready}
           key={connector.id}
           onClick={() => connect({ connector })}

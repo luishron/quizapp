@@ -3,6 +3,7 @@ import { Box, Chip } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { Theme } from '@mui/material/styles';
+import { FaWallet } from 'react-icons/fa';
 import { useAccount, useNetwork } from 'wagmi';
 import theme from '../../theme/theme';
 import { shortenAddress } from '../../utils/shortenAddress';
@@ -10,13 +11,18 @@ import DisconnectButton from './DisconnectButton';
 import Logo from './Logo';
 
 const Navbar = styled(AppBar)(({ theme }: { theme: Theme }) => ({
-  background: theme.palette.secondary.main,
+  background: 'transparent',
   boxShadow: 'none',
+  borderBottom: `1px solid ${theme.palette.divider}`,
 }));
 
-const ChipAddress = styled(Chip)(({ theme }: { theme: Theme }) => ({
-  background: theme.palette.secondary.light,
-  color: theme.palette.text.primary,
+const StyledChip = styled(Chip)(({ theme }: { theme: Theme }) => ({
+  background: theme.palette.primary.light,
+  color: theme.palette.background.default,
+  fontWeight: 'bold',
+  fontSize: '.8rem',
+  paddingLeft: theme.spacing(1),
+  paddingRight: theme.spacing(1),
 }));
 
 const Header = () => {
@@ -45,7 +51,11 @@ const Header = () => {
               alignItems: 'center',
             }}
           >
-            <ChipAddress theme={theme} label={shortAddress} />
+            <StyledChip
+              theme={theme}
+              label={shortAddress}
+              icon={<FaWallet color="primary" size="18px" />}
+            />
             <DisconnectButton />
           </Box>
         ) : (

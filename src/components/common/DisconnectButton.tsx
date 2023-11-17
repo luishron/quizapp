@@ -6,7 +6,7 @@ import { useDisconnect } from 'wagmi';
 import theme from '../../theme/theme';
 
 const DisconnectIcon = styled(IconButton)(({ theme }: { theme: Theme }) => ({
-  color: theme.palette.text.primary,
+  color: theme.palette.primary.light,
 }));
 const DisconnectButton = () => {
   const { disconnect } = useDisconnect();
