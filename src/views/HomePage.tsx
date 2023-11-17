@@ -1,5 +1,5 @@
 // Ejemplo en una página específica, como HomePage.tsx
-import { Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import MainLayout from '../components/layout/MainLayout';
 
@@ -10,10 +10,22 @@ const HomePage = () => {
   };
   return (
     <MainLayout>
-      <h1>Bienvenido a Mi Aplicación</h1>
-      <Button variant="contained" color="primary" onClick={handleGoToSurvey}>
-        Take Quizz
-      </Button>
+      <Box>
+        <Typography variant="h2" component="h1">
+          Answer and Earn with QuizDapp
+        </Typography>
+        <Typography variant="h6" component="p">
+          Take Quizzes, Earn Tokens, and Learn About Your Favorite Projects
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          onClick={handleGoToSurvey}
+        >
+          Get Started
+        </Button>
+      </Box>
     </MainLayout>
   );
 };
