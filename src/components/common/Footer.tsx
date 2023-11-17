@@ -8,6 +8,10 @@ const FooterSection = styled(Box)(({ theme }: { theme: Theme }) => ({
   borderTop: `1px solid ${theme.palette.divider}`,
 }));
 
+const StiledTypography = styled(Typography)(({ theme }: { theme: Theme }) => ({
+  color: theme.palette.text.secondary,
+  fontSize: '.8rem',
+}));
 const Footer = () => {
   return (
     <FooterSection
@@ -19,7 +23,7 @@ const Footer = () => {
         borderTop: '1px solid rgba(0, 0, 0, 1)',
       }}
     >
-      <Typography variant="body1">© 2023 QuizDapp</Typography>
+      <StiledTypography theme={theme}>© 2023 QuizDapp</StiledTypography>
     </FooterSection>
   );
 };
