@@ -1,6 +1,30 @@
-import { Box, Button, Typography } from '@mui/material';
+import styled from '@emotion/styled';
+import { Box, Button, Theme, Typography } from '@mui/material';
+import { FaAngleRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import MainLayout from '../components/layout/MainLayout';
+import theme from '../theme/theme';
+
+const StyledTitle = styled(Typography)(({ theme }: { theme: Theme }) => ({
+  fontWeight: 'bold',
+  fontSize: '4rem',
+  lineHeight: '4.5rem',
+  background: `linear-gradient(45deg, ${theme.palette.primary.light} 30%, ${theme.palette.primary.main} 90%)`,
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+}));
+
+const StyledSubTitle = styled(Typography)(({ theme }: { theme: Theme }) => ({
+  fontSize: '2rem',
+  lineHeight: '2.5rem',
+  padding: '1.5rem 0',
+}));
+
+const StyledButton = styled(Button)(({ theme }: { theme: Theme }) => ({
+  padding: '.8rem 1.6rem',
+  borderRadius: '2rem',
+  fontWeight: 'bold',
+}));
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -26,20 +50,20 @@ const HomePage = () => {
             textAlign: { xs: 'center', md: 'left' },
           }}
         >
-          <Typography variant="h2" component="h1" sx={{ fontWeight: 'bold' }}>
-            Answer and Earn with QuizDapp
-          </Typography>
-          <Typography variant="h6" component="p" sx={{ my: 3 }}>
+          <StyledTitle theme={theme}>Answer and Earn with QuizDapp</StyledTitle>
+          <StyledSubTitle theme={theme}>
             Take Quizzes, Earn Tokens, and Learn About Your Favorite Projects
-          </Typography>
-          <Button
+          </StyledSubTitle>
+          <StyledButton
+            theme={theme}
             variant="contained"
             color="primary"
             size="large"
+            endIcon={<FaAngleRight />}
             onClick={handleGoToSurvey}
           >
             Get Started
-          </Button>
+          </StyledButton>
         </Box>
         <Box
           sx={{
