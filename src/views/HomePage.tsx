@@ -19,7 +19,7 @@ const HomePage = () => {
         </Typography>
         <Button
           variant="contained"
-          color="primary"
+          color="secondary"
           size="large"
           onClick={handleGoToSurvey}
         >

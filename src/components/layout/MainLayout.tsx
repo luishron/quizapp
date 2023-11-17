@@ -15,7 +15,14 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <Container
         component="main"
         maxWidth="lg"
-        sx={{ minHeight: 'calc(100vh - 220px)', mt: 8, mb: 4 }}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          minHeight: 'calc(100vh - 220px)',
+          mt: 8,
+          mb: 4,
+        }}
       >
         {children}
       </Container>
