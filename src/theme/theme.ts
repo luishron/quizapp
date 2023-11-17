@@ -33,6 +33,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          padding: '.6rem 1.2rem',
+          borderRadius: '1.5rem',
+          fontWeight: 'bold',
+        },
+      },
+    },
   },
 });
 

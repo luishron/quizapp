@@ -20,12 +20,6 @@ const StyledSubTitle = styled(Typography)(({ theme }: { theme: Theme }) => ({
   padding: '1.5rem 0',
 }));
 
-const StyledButton = styled(Button)(({ theme }: { theme: Theme }) => ({
-  padding: '.8rem 1.6rem',
-  borderRadius: '2rem',
-  fontWeight: 'bold',
-}));
-
 const HomePage = () => {
   const navigate = useNavigate();
   const handleGoToSurvey = () => {
@@ -54,8 +48,7 @@ const HomePage = () => {
           <StyledSubTitle theme={theme}>
             Take Quizzes, Earn Tokens, and Learn About Your Favorite Projects
           </StyledSubTitle>
-          <StyledButton
-            theme={theme}
+          <Button
             variant="contained"
             color="primary"
             size="large"
@@ -63,7 +56,7 @@ const HomePage = () => {
             onClick={handleGoToSurvey}
           >
             Get Started
-          </StyledButton>
+          </Button>
         </Box>
         <Box
           sx={{
