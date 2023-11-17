@@ -1,0 +1,71 @@
+{
+  "title": "Answer the Questions About Bitcoin",
+  "image": "./img/bitcoin.jpg",
+  "description": "Test your knowledge about Bitcoin, the world's leading cryptocurrency.",
+  "questions": [
+    {
+      "text": "What is Bitcoin?",
+      "image": "./img/question-1.jpg",
+      "lifetimeSeconds": 10,
+      "options": [
+        {
+          "text": "A digital currency"
+        },
+        {
+          "text": "A physical coin"
+        },
+        {
+          "text": "A type of stock"
+        }
+      ]
+    },
+    {
+      "text": "Who is the creator of Bitcoin?",
+      "image": "./img/question-2.jpg",
+      "lifetimeSeconds": 10,
+      "options": [
+        {
+          "text": "Satoshi Nakamoto"
+        },
+        {
+          "text": "Elon Musk"
+        },
+        {
+          "text": "Bill Gates"
+        }
+      ]
+    },
+    {
+      "text": "In what year was the Bitcoin whitepaper published?",
+      "image": "./img/question-3.jpg",
+      "lifetimeSeconds": 10,
+      "options": [
+        {
+          "text": "2008"
+        },
+        {
+          "text": "2010"
+        },
+        {
+          "text": "2012"
+        }
+      ]
+    },
+    {
+      "text": "Which technology is the basis of Bitcoin?",
+      "image": "./img/question-4.jpg",
+      "lifetimeSeconds": 10,
+      "options": [
+        {
+          "text": "Blockchain"
+        },
+        {
+          "text": "Artificial Intelligence"
+        },
+        {
+          "text": "Quantum Computing"
+        }
+      ]
+    }
+  ]
+}
