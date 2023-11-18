@@ -5,7 +5,6 @@ const useQuestions = (quizName) => {
   return useQuery({
     queryKey: [quizName],
     queryFn: () => getQuiz(quizName),
-    // Aquí puedes agregar otras opciones como staleTime, cacheTime, etc.
   });
 };
 
