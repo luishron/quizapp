@@ -7,14 +7,11 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import App from './App.tsx';
 
-// Configure chains & providers with the Alchemy provider.
-// Two popular providers are Alchemy (alchemy.com) and Infura (infura.io)
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [goerli],
   [alchemyProvider({ apiKey: 'yourAlchemyApiKey' }), publicProvider()]
 );
 
-// Set up wagmi config
 const config = createConfig({
   autoConnect: true,
   connectors: [new MetaMaskConnector({ chains })],
