@@ -1,18 +1,10 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  Typography,
-} from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { useState } from 'react';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { FaAngleRight } from 'react-icons/fa';
 import bitcoin from '../../data/survey/bitcoin.json';
+import NavigationButtons from './NavigationButtons';
+import QuestionCard from './QuestionCard';
+import SurveyCard from './SurveyCard';
 
 const SurveyStep = () => {
   const { title, image, description, questions } = bitcoin;
@@ -42,35 +34,16 @@ const SurveyStep = () => {
 
   if (!surveyStarted) {
     return (
-      <Card sx={{ display: 'flex' }}>
-        <CardMedia
-          component="img"
-          alt="Survey Image"
-          image={image}
-          style={{ width: 'auto', height: '350px' }}
-          title={title}
-        />
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <CardContent sx={{ flex: '1 0 auto' }}>
-            <Typography variant="h6" component="h3">
-              {title}
-            </Typography>
-            <Typography variant="body2" component="p">
-              {description}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={startSurvey}
-              endIcon={<FaAngleRight />}
-            >
-              Start survey
-            </Button>
-          </CardActions>
-        </Box>
-      </Card>
+      <SurveyCard image={image} title={title} description={description}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={startSurvey}
+          endIcon={<FaAngleRight />}
+        >
+          Start survey
+        </Button>
+      </SurveyCard>
     );
   }
 
@@ -79,63 +52,22 @@ const SurveyStep = () => {
   const isFirstQuestion = currentQuestion === 0;
 
   return (
-    <Card sx={{ display: 'flex' }}>
-      <CardMedia
-        component="img"
-        alt={currentQuestionData.text}
-        image={currentQuestionData.image}
-        style={{ width: 'auto', height: '350px' }}
+    <Box sx={{ border: '1px solid red' }}>
+      <QuestionCard
+        questionText={currentQuestionData.text}
+        questionImage={currentQuestionData.image}
+        options={currentQuestionData.options}
+        answer={answers[currentQuestion]}
+        onAnswerChange={handleAnswer}
       />
-      <CardContent>
-        <Typography variant="h5" component="h2">
-          {currentQuestionData.text}
-        </Typography>
-        <RadioGroup
-          value={answers[currentQuestion]}
-          onChange={(e) => handleAnswer(e.target.value)}
-        >
-          {currentQuestionData.options.map((option, index) => (
-            <FormControlLabel
-              key={index}
-              value={option.text}
-              control={<Radio />}
-              label={option.text}
-            />
-          ))}
-        </RadioGroup>
-      </CardContent>
-      <CardActions sx={{ justifyContent: 'space-between' }}>
-        {!isFirstQuestion && (
-          <Button
-            variant="outlined"
-            color="primary"
-            onClick={handlePreviousQuestion}
-            startIcon={<FaAngleLeft />}
-          >
-            Previous
-          </Button>
-        )}
-        {!isLastQuestion ? (
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleNextQuestion}
-            endIcon={<FaAngleRight />}
-          >
-            Next
-          </Button>
-        ) : (
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleFinish}
-            endIcon={<FaAngleRight />}
-          >
-            Finish
-          </Button>
-        )}
-      </CardActions>
-    </Card>
+      <NavigationButtons
+        isFirstQuestion={isFirstQuestion}
+        isLastQuestion={isLastQuestion}
+        onPrevious={handlePreviousQuestion}
+        onNext={handleNextQuestion}
+        onFinish={handleFinish}
+      />
+    </Box>
   );
 };
 
