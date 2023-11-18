@@ -13,7 +13,7 @@ const useQuiz = (quiz) => {
   const handleFinish = () => console.log(answers);
   const startQuiz = () => setQuizStarted(true);
 
-  const isLastQuestion = currentQuestion === quiz.questions.length - 1;
+  const isLastQuestion = quiz && currentQuestion === quiz.questions.length - 1;
   const isFirstQuestion = currentQuestion === 0;
 
   return {
