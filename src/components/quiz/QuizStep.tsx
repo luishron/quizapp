@@ -1,16 +1,16 @@
 import { Box, Button } from '@mui/material';
 import { useState } from 'react';
 import { FaAngleRight } from 'react-icons/fa';
-import bitcoin from '../../data/survey/bitcoin.json';
+import bitcoin from '../../data/quiz/bitcoin.json';
 import NavigationButtons from './NavigationButtons';
 import QuestionCard from './QuestionCard';
-import SurveyCard from './SurveyCard';
+import QuizCard from './QuizCard';
 
-const SurveyStep = () => {
+const QuizStep = () => {
   const { title, image, description, questions } = bitcoin;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [surveyStarted, setSurveyStarted] = useState(false);
+  const [quizStarted, setQuizStarted] = useState(false);
 
   const handleNextQuestion = () => {
     setCurrentQuestion(currentQuestion + 1);
@@ -28,22 +28,22 @@ const SurveyStep = () => {
     console.log(answers);
   };
 
-  const startSurvey = () => {
-    setSurveyStarted(true);
+  const startQuiz = () => {
+    setQuizStarted(true);
   };
 
-  if (!surveyStarted) {
+  if (!quizStarted) {
     return (
-      <SurveyCard image={image} title={title} description={description}>
+      <QuizCard image={image} title={title} description={description}>
         <Button
           variant="contained"
           color="secondary"
-          onClick={startSurvey}
+          onClick={startQuiz}
           endIcon={<FaAngleRight />}
         >
-          Start survey
+          Start quiz
         </Button>
-      </SurveyCard>
+      </QuizCard>
     );
   }
 
@@ -71,4 +71,4 @@ const SurveyStep = () => {
   );
 };
 
-export default SurveyStep;
+export default QuizStep;

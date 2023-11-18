@@ -3,9 +3,9 @@ import { useAccount, useNetwork } from 'wagmi';
 import ConnectButton from '../components/common/ConnectButton';
 import SwitchNetwork from '../components/common/SwitchNetwork';
 import MainLayout from '../components/layout/MainLayout';
-import SurveyStep from '../components/survey/SurveyStep';
+import QuizStep from '../components/quiz/QuizStep';
 
-export const Survey = () => {
+export const Quiz = () => {
   const { chain } = useNetwork();
   const { isConnected } = useAccount();
   const isNetwork = chain?.id === 5;
@@ -29,10 +29,10 @@ export const Survey = () => {
             <SwitchNetwork />
           </Box>
         )}
-        {isConnected && isNetwork && <SurveyStep />}
+        {isConnected && isNetwork && <QuizStep />}
       </>
     </MainLayout>
   );
 };
 
-export default Survey;
+export default Quiz;

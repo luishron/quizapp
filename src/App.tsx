@@ -3,11 +3,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import theme from './theme/theme';
 import Home from './views/Home';
-import Survey from './views/Survey';
+import Quiz from './views/quiz';
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
-  { path: '/survey', element: <Survey /> },
+  { path: '/quiz', element: <Quiz /> },
   // { path: 'dashboard', element: <Dashboard /> },
   // { path: '404', element: <NotFound /> },
   // { path: '*', element: <Navigate to="/404" /> },

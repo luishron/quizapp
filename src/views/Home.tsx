@@ -22,8 +22,8 @@ const StyledSubTitle = styled(Typography)(({ theme }: { theme: Theme }) => ({
 
 const Home = () => {
   const navigate = useNavigate();
-  const handleGoToSurvey = () => {
-    navigate('/survey');
+  const handleGoToQuiz = () => {
+    navigate('/quiz');
   };
   return (
     <MainLayout>
@@ -53,7 +53,7 @@ const Home = () => {
             color="primary"
             size="large"
             endIcon={<FaAngleRight />}
-            onClick={handleGoToSurvey}
+            onClick={handleGoToQuiz}
           >
             Get Started
           </Button>

@@ -9,7 +9,7 @@ import {
   useTheme,
 } from '@mui/material';
 
-const SurveyCard = ({ image, title, description, children }) => {
+const QuizCard = ({ image, title, description, children }) => {
   const theme = useTheme();
   const isMobileOrTablet = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -21,7 +21,7 @@ const SurveyCard = ({ image, title, description, children }) => {
     <Card sx={cardStyle}>
       <CardMedia
         component="img"
-        alt="Survey Image"
+        alt={title}
         image={image}
         style={{ width: 'auto', height: '350px' }}
       />
@@ -40,4 +40,4 @@ const SurveyCard = ({ image, title, description, children }) => {
   );
 };
 
-export default SurveyCard;
+export default QuizCard;
