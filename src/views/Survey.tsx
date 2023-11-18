@@ -5,7 +5,7 @@ import SwitchNetwork from '../components/common/SwitchNetwork';
 import MainLayout from '../components/layout/MainLayout';
 import SurveyStep from '../components/survey/SurveyStep';
 
-export const SurveyPage = () => {
+export const Survey = () => {
   const { chain } = useNetwork();
   const { isConnected } = useAccount();
   const isNetwork = chain?.id === 5;
@@ -34,3 +34,5 @@ export const SurveyPage = () => {
     </MainLayout>
   );
 };
+
+export default Survey;

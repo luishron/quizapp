@@ -20,7 +20,7 @@ const StyledSubTitle = styled(Typography)(({ theme }: { theme: Theme }) => ({
   padding: '1.5rem 0',
 }));
 
-export const HomePage = () => {
+const Home = () => {
   const navigate = useNavigate();
   const handleGoToSurvey = () => {
     navigate('/survey');
@@ -75,3 +75,5 @@ export const HomePage = () => {
     </MainLayout>
   );
 };
+
+export default Home;
