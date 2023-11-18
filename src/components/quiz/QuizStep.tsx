@@ -2,7 +2,6 @@ import { Box, Button } from '@mui/material';
 import { FaAngleRight } from 'react-icons/fa';
 import useQuestions from '../../hooks/useQuestions';
 import useQuiz from '../../hooks/useQuiz';
-import NavigationButtons from './NavigationButtons';
 import QuestionCard from './QuestionCard';
 import QuizCard from './QuizCard';
 
@@ -51,22 +50,25 @@ const QuizStep = () => {
 
   const currentQuestionData = quiz.questions[currentQuestion];
 
+  const handleTimeout = () => {
+    if (!isLastQuestion) {
+      handleNextQuestion();
+    } else {
+      handleFinish();
+    }
+  };
+
   return (
     <Box>
       <QuestionCard
+        key={`question-${currentQuestion}`}
         questionText={currentQuestionData.text}
         questionImage={currentQuestionData.image}
         options={currentQuestionData.options}
         answer={answers[currentQuestion]}
         onAnswerChange={handleAnswer}
         lifetimeSeconds={currentQuestionData.lifetimeSeconds}
-      />
-      <NavigationButtons
-        isFirstQuestion={isFirstQuestion}
-        isLastQuestion={isLastQuestion}
-        onPrevious={handlePreviousQuestion}
-        onNext={handleNextQuestion}
-        onFinish={handleFinish}
+        onTimeout={handleTimeout}
       />
     </Box>
   );
