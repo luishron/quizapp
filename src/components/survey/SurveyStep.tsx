@@ -52,7 +52,7 @@ const SurveyStep = () => {
   const isFirstQuestion = currentQuestion === 0;
 
   return (
-    <Box sx={{ border: '1px solid red' }}>
+    <Box>
       <QuestionCard
         questionText={currentQuestionData.text}
         questionImage={currentQuestionData.image}
