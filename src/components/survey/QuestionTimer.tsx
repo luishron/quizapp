@@ -3,34 +3,23 @@ import { useEffect, useState } from 'react';
 
 const QuestionTimer = ({ seconds, onTimeout }) => {
   const [timeLeft, setTimeLeft] = useState(seconds);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const timerInterval = setInterval(() => {
-      setTimeLeft((prevTime) => {
-        const newTime = prevTime - 1;
-        if (newTime <= 0) {
-          clearInterval(timerInterval);
-          onTimeout();
-        }
-        return newTime;
-      });
-    }, 1000);
+    if (timeLeft <= 0) {
+      onTimeout();
+      return;
+    }
 
-    const progressInterval = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress === 100) {
-          clearInterval(progressInterval);
-        }
-        return Math.min(oldProgress + 100 / seconds, 100);
-      });
-    }, (1000 * seconds) / 100);
+    const timerInterval = setInterval(() => {
+      setTimeLeft((prevTime) => prevTime - 1);
+    }, 1000);
 
     return () => {
       clearInterval(timerInterval);
-      clearInterval(progressInterval);
     };
-  }, [seconds, onTimeout]);
+  }, [timeLeft, onTimeout]);
+
+  const progress = (timeLeft / seconds) * 100;
 
   return (
     <Box position="relative" display="inline-flex">
@@ -46,8 +35,7 @@ const QuestionTimer = ({ seconds, onTimeout }) => {
         justifyContent="center"
       >
         <Typography variant="h5" component="span" color="textSecondary">
-          {timeLeft}
-          {'s '}
+          {timeLeft}s
         </Typography>
       </Box>
     </Box>
