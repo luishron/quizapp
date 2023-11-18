@@ -18,6 +18,7 @@ const QuestionCard = ({
   options,
   answer,
   onAnswerChange,
+  lifetimeSeconds,
 }) => {
   const theme = useTheme();
   const isMobileOrTablet = useMediaQuery(theme.breakpoints.down('sm'));
@@ -61,7 +62,7 @@ const QuestionCard = ({
           />
           <Box sx={overlayStyle}>
             <QuestionTimer
-              seconds={10}
+              seconds={lifetimeSeconds}
               onTimeout={() => {
                 console.log('hola');
               }}

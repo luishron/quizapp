@@ -59,6 +59,7 @@ const QuizStep = () => {
         options={currentQuestionData.options}
         answer={answers[currentQuestion]}
         onAnswerChange={handleAnswer}
+        lifetimeSeconds={currentQuestionData.lifetimeSeconds}
       />
       <NavigationButtons
         isFirstQuestion={isFirstQuestion}
