@@ -16,6 +16,7 @@ const QuizCard = ({ image, title, description, children }) => {
   const cardStyle = {
     display: 'flex',
     flexDirection: isMobileOrTablet ? 'column' : 'row',
+    boxShadow: 6,
   };
   return (
     <Card sx={cardStyle}>
@@ -23,14 +24,38 @@ const QuizCard = ({ image, title, description, children }) => {
         component="img"
         alt={title}
         image={image}
-        style={{ width: 'auto', height: '350px' }}
+        sx={{
+          width: isMobileOrTablet ? 'auto' : '50%',
+          height: isMobileOrTablet ? '100%' : 'auto',
+        }}
       />
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography variant="h6" component="h3">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '1rem',
+          justifyContent: 'center',
+        }}
+      >
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+          }}
+        >
+          <Typography variant="h4" component="h2">
             {title}
           </Typography>
-          <Typography variant="body2" component="p">
+          <Typography
+            component="p"
+            sx={{
+              fontSize: '1.5rem',
+              lineHeight: '2rem',
+              padding: '1rem 0',
+              color: theme.palette.text.secondary,
+            }}
+          >
             {description}
           </Typography>
         </CardContent>
