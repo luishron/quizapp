@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Box, Chip } from '@mui/material';
+import { Box } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { Theme } from '@mui/material/styles';
@@ -12,15 +12,6 @@ const Navbar = styled(AppBar)(({ theme }: { theme: Theme }) => ({
   background: 'transparent',
   boxShadow: 'none',
   borderBottom: `1px solid ${theme.palette.divider}`,
-}));
-
-const StyledChip = styled(Chip)(({ theme }: { theme: Theme }) => ({
-  background: theme.palette.primary.light,
-  color: theme.palette.background.default,
-  fontWeight: 'bold',
-  fontSize: '.8rem',
-  paddingLeft: theme.spacing(1),
-  paddingRight: theme.spacing(1),
 }));
 
 const Header = () => {
