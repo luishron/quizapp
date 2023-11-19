@@ -9,9 +9,11 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import App from './App.tsx';
 
+const alchemyApiKey = import.meta.env.VITE_ALCHEMY_API_KEY;
+
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [goerli],
-  [alchemyProvider({ apiKey: 'yourAlchemyApiKey' }), publicProvider()]
+  [alchemyProvider({ apiKey: alchemyApiKey }), publicProvider()]
 );
 
 const config = createConfig({
