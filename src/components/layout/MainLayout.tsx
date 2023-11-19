@@ -19,7 +19,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          minHeight: 'calc(100vh - 100px)',
+          minHeight: 'calc(100vh - 120px)',
         }}
       >
         {children}
