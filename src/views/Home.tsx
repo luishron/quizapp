@@ -9,7 +9,7 @@ const StyledTitle = styled(Typography)(({ theme }: { theme: Theme }) => ({
   fontWeight: 'bold',
   fontSize: '4rem',
   lineHeight: '4.5rem',
-  background: `linear-gradient(45deg, ${theme.palette.primary.light} 30%, ${theme.palette.primary.main} 90%)`,
+  background: `linear-gradient(45deg, ${theme.palette.text.primary} 0%, ${theme.palette.primary.main} 100%)`,
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
 }));
