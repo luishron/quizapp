@@ -16,11 +16,11 @@ export const StyledTitle = styled(Typography)(
   })
 );
 
-const StyledSubTitle = styled(Typography)(({ theme }: { theme: Theme }) => ({
+const StyledSubTitle = styled(Typography)({
   fontSize: '2rem',
   lineHeight: '2.5rem',
   padding: '1.5rem 0',
-}));
+});
 
 const HomeView = () => {
   const navigate = useNavigate();

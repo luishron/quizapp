@@ -9,7 +9,7 @@ import MainLayout from '../components/layout/MainLayout';
 
 export const EarnView = () => {
   const { chain } = useNetwork();
-  const { address, isConnected } = useAccount();
+  const { isConnected } = useAccount();
   const isNetwork = chain?.id === 5;
   useEffect(() => {
     const fireConfetti = () => {

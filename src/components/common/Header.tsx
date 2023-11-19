@@ -5,7 +5,6 @@ import Toolbar from '@mui/material/Toolbar';
 import { Theme } from '@mui/material/styles';
 import { useAccount, useNetwork } from 'wagmi';
 import theme from '../../theme/theme';
-import { shortenAddress } from '../../utils/shortenAddress';
 import AccountControl from './AccountControl';
 import Logo from './Logo';
 
@@ -26,11 +25,9 @@ const StyledChip = styled(Chip)(({ theme }: { theme: Theme }) => ({
 
 const Header = () => {
   const { chain } = useNetwork();
-  const { address, isConnected } = useAccount();
+  const { isConnected } = useAccount();
 
   const isNetwork = chain?.id === 5;
-
-  const shortAddress = shortenAddress(address);
 
   return (
     <Navbar theme={theme} position="static">

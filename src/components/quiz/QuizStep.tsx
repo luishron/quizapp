@@ -1,6 +1,5 @@
 import { Box, Button } from '@mui/material';
 import { FaAngleRight } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 import useQuestions from '../../hooks/useQuestions';
 import useQuiz from '../../hooks/useQuiz';
 import QuestionCard from './QuestionCard';
@@ -10,22 +9,15 @@ import SumaryAnswers from './SumaryAnswers';
 const QuizStep = () => {
   const { data: quiz, isLoading, error } = useQuestions('bitcoin');
 
-  const navigate = useNavigate();
-  const handleGoToEarn = () => {
-    navigate('/quiz');
-  };
-
   const {
     currentQuestion,
     answers,
     quizStarted,
     handleNextQuestion,
-    handlePreviousQuestion,
     handleAnswer,
     handleFinish,
     startQuiz,
     isLastQuestion,
-    isFirstQuestion,
     showFinalView,
   } = useQuiz(quiz);
 
