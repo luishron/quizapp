@@ -3,11 +3,10 @@ import { Box, Chip } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { Theme } from '@mui/material/styles';
-import { FaWallet } from 'react-icons/fa';
 import { useAccount, useNetwork } from 'wagmi';
 import theme from '../../theme/theme';
 import { shortenAddress } from '../../utils/shortenAddress';
-import DisconnectButton from './DisconnectButton';
+import AccountControl from './AccountControl';
 import Logo from './Logo';
 
 const Navbar = styled(AppBar)(({ theme }: { theme: Theme }) => ({
@@ -51,12 +50,7 @@ const Header = () => {
               alignItems: 'center',
             }}
           >
-            <StyledChip
-              theme={theme}
-              label={shortAddress}
-              icon={<FaWallet color="primary" size="18px" />}
-            />
-            <DisconnectButton />
+            <AccountControl />
           </Box>
         ) : (
           ''
