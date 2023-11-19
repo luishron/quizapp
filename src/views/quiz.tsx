@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { useAccount, useNetwork } from 'wagmi';
 import ConnectButton from '../components/common/ConnectButton';
+import IconMetamask from '../components/common/IconMetamask';
 import SwitchNetwork from '../components/common/SwitchNetwork';
 import MainLayout from '../components/layout/MainLayout';
 import QuizStep from '../components/quiz/QuizStep';
@@ -13,9 +14,17 @@ export const Quiz = () => {
     <MainLayout>
       <>
         {!isConnected && (
-          <Box sx={{ textAlign: 'center' }}>
-            <Typography variant="subtitle1" component="p">
-              Please connect your wallet
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 2,
+            }}
+          >
+            <IconMetamask size="80" />
+            <Typography variant="h5" component="p">
+              Please connect your wallet Metamask
             </Typography>
             <ConnectButton />
           </Box>

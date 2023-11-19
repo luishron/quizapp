@@ -1,4 +1,5 @@
 import { Button } from '@mui/material';
+import { FaWallet } from 'react-icons/fa';
 import { useConnect } from 'wagmi';
 
 const ConnectButton = () => {
@@ -12,9 +13,10 @@ const ConnectButton = () => {
           color="primary"
           disabled={!connector.ready}
           key={connector.id}
+          startIcon={<FaWallet color="primary" size="18px" />}
           onClick={() => connect({ connector })}
         >
-          {connector.name}
+          {'Connect Wallet'}
           {isLoading &&
             connector.id === pendingConnector?.id &&
             ' (connecting)'}
