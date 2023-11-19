@@ -4,16 +4,16 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#1fc7d4',
-      dark: '#c226d0',
-      light: '#D1FCF1',
+      dark: '#169DB6',
+      light: '#52E5E3',
     },
     secondary: {
       main: '#c226d0',
-      dark: '#2a028e',
-      light: '#6935c9',
+      dark: '#9A1BB2',
+      light: '#E257E2',
     },
     background: {
-      default: '#181d27',
+      default: '#07090D',
       paper: '#181d2a',
     },
     text: {
@@ -29,7 +29,8 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          background: 'linear-gradient(180deg, #000 0%, #181d2a 100%)',
+          background:
+            'linear-gradient(180deg, #07090D 40%, #0F121A 60%, #181d2a 100%)',
         },
       },
     },
