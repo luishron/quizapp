@@ -60,11 +60,19 @@ const AccountControl = () => {
   return (
     <>
       <ButtonGroup>
-        <Button startIcon={<FaWallet color="primary" size="18px" />}>
+        <Button
+          variant="outlined"
+          startIcon={<FaWallet color="primary" size="18px" />}
+        >
           {shortAddress}
         </Button>
-        <Button aria-describedby={id} type="button" onClick={handleClick}>
-          <FaAngleDown />
+        <Button
+          variant="outlined"
+          aria-describedby={id}
+          type="button"
+          onClick={handleClick}
+        >
+          <FaAngleDown size="1.2em" />
         </Button>
       </ButtonGroup>
       <Popper
