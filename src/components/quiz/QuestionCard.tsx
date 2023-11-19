@@ -51,38 +51,50 @@ const QuestionCard = ({
           sx={{
             background: 'rgba(0,0,0,0.2)',
             position: 'relative',
-            width: 'auto',
-            height: '350px',
+            width: isMobileOrTablet ? 'auto' : '50%',
+            height: isMobileOrTablet ? '50%' : 'auto',
           }}
         >
-          <CardMedia
-            component="img"
-            alt={questionText}
-            image={questionImage}
-            sx={{ width: '100%', height: '100%' }}
-          />
+          <CardMedia component="img" alt={questionText} image={questionImage} />
           <Box sx={overlayStyle}>
             <QuestionTimer seconds={lifetimeSeconds} onTimeout={onTimeout} />
           </Box>
         </Box>
-        <CardContent sx={{}}>
-          <Typography variant="h5" component="h2">
-            {questionText}
-          </Typography>
-          <RadioGroup
-            value={answer}
-            onChange={(e) => onAnswerChange(e.target.value)}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '1rem',
+            justifyContent: 'center',
+            width: isMobileOrTablet ? 'auto' : '50%',
+          }}
+        >
+          <CardContent
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+              width: '100%',
+            }}
           >
-            {options.map((option, index) => (
-              <FormControlLabel
-                key={index}
-                value={option.text}
-                control={<Radio />}
-                label={option.text}
-              />
-            ))}
-          </RadioGroup>
-        </CardContent>
+            <Typography variant="h4" component="h2">
+              {questionText}
+            </Typography>
+            <RadioGroup
+              value={answer}
+              onChange={(e) => onAnswerChange(e.target.value)}
+            >
+              {options.map((option, index) => (
+                <FormControlLabel
+                  key={index}
+                  value={option.text}
+                  control={<Radio />}
+                  label={option.text}
+                />
+              ))}
+            </RadioGroup>
+          </CardContent>
+        </Box>
       </Card>
     </>
   );
