@@ -5,14 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import MainLayout from '../components/layout/MainLayout';
 import theme from '../theme/theme';
 
-const StyledTitle = styled(Typography)(({ theme }: { theme: Theme }) => ({
-  fontWeight: 'bold',
-  fontSize: '4rem',
-  lineHeight: '4.5rem',
-  background: `linear-gradient(45deg, ${theme.palette.text.primary} 0%, ${theme.palette.primary.main} 100%)`,
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-}));
+export const StyledTitle = styled(Typography)(
+  ({ theme }: { theme: Theme }) => ({
+    fontWeight: 'bold',
+    fontSize: '4rem',
+    lineHeight: '4.5rem',
+    background: `linear-gradient(45deg, ${theme.palette.text.primary} 0%, ${theme.palette.primary.main} 100%)`,
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+  })
+);
 
 const StyledSubTitle = styled(Typography)(({ theme }: { theme: Theme }) => ({
   fontSize: '2rem',
