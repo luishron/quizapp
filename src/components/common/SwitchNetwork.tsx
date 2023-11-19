@@ -1,5 +1,6 @@
 import { Button } from '@mui/material';
 import { useEffect } from 'react';
+import { FaExchangeAlt } from 'react-icons/fa';
 import { useNetwork, useSwitchNetwork } from 'wagmi';
 
 const SwitchNetwork = () => {
@@ -24,7 +25,12 @@ const SwitchNetwork = () => {
   return (
     <div>
       {!isGoerli && (
-        <Button variant="contained" color="primary" onClick={changeToGoerli}>
+        <Button
+          variant="contained"
+          color="primary"
+          startIcon={<FaExchangeAlt />}
+          onClick={changeToGoerli}
+        >
           Cambiar a Goerli
         </Button>
       )}

@@ -6,7 +6,7 @@ import SwitchNetwork from '../components/common/SwitchNetwork';
 import MainLayout from '../components/layout/MainLayout';
 import QuizStep from '../components/quiz/QuizStep';
 
-export const Quiz = () => {
+export const QuizView = () => {
   const { chain } = useNetwork();
   const { isConnected } = useAccount();
   const isNetwork = chain?.id === 5;
@@ -31,8 +31,16 @@ export const Quiz = () => {
         )}
 
         {isConnected && !isNetwork && (
-          <Box sx={{ textAlign: 'center' }}>
-            <Typography variant="subtitle1" component="p">
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 2,
+            }}
+          >
+            <IconMetamask size="80" />
+            <Typography variant="h5" component="p">
               Please switch to the Goerli network
             </Typography>
             <SwitchNetwork />
@@ -44,4 +52,4 @@ export const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default QuizView;
