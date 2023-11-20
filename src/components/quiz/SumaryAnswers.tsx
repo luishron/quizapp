@@ -9,6 +9,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import CountdownTimer from '../common/CountdownTimer';
 
 const SumaryAnswers = ({ quiz, answers }) => {
   const theme = useTheme();
@@ -63,14 +64,17 @@ const SumaryAnswers = ({ quiz, answers }) => {
             </Box>
           ))}
           <Box>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleSubmit}
-              disabled={!isResult}
-            >
-              Send answers
-            </Button>
+            {isResult ? (
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+              >
+                Send answers
+              </Button>
+            ) : (
+              <CountdownTimer />
+            )}
           </Box>
         </CardContent>
       </Box>
