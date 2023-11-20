@@ -1,6 +1,6 @@
 # Frontend Challenge - Membrane
 
-![Project Overview](link-to-your-image-1.jpg)
+![Project Overview](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/home.png)
 
 ## Project Overview
 
@@ -24,6 +24,26 @@ Surveys are loaded in JSON format. Users can answer these surveys and submit the
 - **React Query:** A powerful tool for managing state and server synchronization in React.
 
 ## Features
+
+| ![Home](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/home.png) | ![Metamask](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/metamask.png) |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| *Home*                                                                                                                                               | *Metamask*                                                                                                                                                |
+
+| ![Goerli](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/goerli.png) | ![Quiz](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/quiz.png) |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
+| *Goerli*                                                                                                                                              | *Quiz*                                                                                                                                               |
+
+| ![Question](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/question.png) | ![Summary Lock](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/sumary-lock.png) |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| *Question*                                                                                                                                                 | *Summary Lock*                                                                                                                                                      |
+
+| ![Summary](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/sumary.png) | ![Earn](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/earn.png) |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
+| *Summary*                                                                                                                                              | *Earn*                                                                                                                                               |
+
+
+
+
 
 - **Metamask Wallet Integration:** Users can connect their Metamask wallets.
 - **Network Switching:** Automatically switches to the Goerli network if the user is not connected.
