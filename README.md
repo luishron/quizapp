@@ -25,11 +25,11 @@ Surveys are loaded in JSON format. Users can answer these surveys and submit the
 
 ## Features
 
-| ![Home](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/home.png) | ![Metamask](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/metamask.png) |
+| ![Home](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/home.png) | ![Metamask](https://github.com/luishron/FrontendChallenge-Membrane/blob/a54e275292dc2c9d4902b10c4fc8d0236cf54f5b/public/img/screen/metamask.png) |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | *Home*                                                                                                                                               | *Metamask*                                                                                                                                                |
 
-| ![Goerli](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/goerli.png) | ![Quiz](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/quiz.png) |
+| ![Goerli](https://github.com/luishron/FrontendChallenge-Membrane/blob/a54e275292dc2c9d4902b10c4fc8d0236cf54f5b/public/img/screen/goerli.png) | ![Quiz](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/quiz.png) |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
 | *Goerli*                                                                                                                                              | *Quiz*                                                                                                                                               |
 
