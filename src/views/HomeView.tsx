@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Box, Button, Theme, Typography } from '@mui/material';
 import { FaAngleRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { TestDos } from '../components/common/TestDos';
 import MainLayout from '../components/layout/MainLayout';
 import theme from '../theme/theme';
 
@@ -74,6 +75,9 @@ const HomeView = () => {
           />
         </Box>
       </Box>
+      <Typography variant="caption" color="text.secondary">
+        <TestDos />
+      </Typography>
     </MainLayout>
   );
 };
