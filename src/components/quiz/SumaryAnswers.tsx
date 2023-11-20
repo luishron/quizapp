@@ -33,6 +33,9 @@ const SumaryAnswers = ({ quiz, answers }) => {
           display: 'flex',
           flexDirection: 'column',
           gap: '1rem',
+          width: isMobileOrTablet ? 'auto' : '50%',
+          height: isMobileOrTablet ? '100%' : 'auto',
+          border: '1px solid red',
         }}
       >
         <Typography variant="h4" component="h2" color="primary">
@@ -69,6 +72,7 @@ const SumaryAnswers = ({ quiz, answers }) => {
           background: 'rgba(0,0,0,0.2)',
           width: isMobileOrTablet ? 'auto' : '50%',
           height: isMobileOrTablet ? '100%' : 'auto',
+          border: '1px solid blue',
         }}
       />
     </Card>

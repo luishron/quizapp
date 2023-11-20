@@ -16,7 +16,7 @@ import { FaAngleDown, FaCoins, FaWallet } from 'react-icons/fa';
 import { MdLogout } from 'react-icons/md';
 import { useAccount, useDisconnect } from 'wagmi';
 import { shortenAddress } from '../../utils/shortenAddress';
-import QuizTokenBalance from './QuizTokenBalance';
+import QuizTokenBalance from '../quiz/QuizTokenBalance';
 
 const StyledMenu = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
