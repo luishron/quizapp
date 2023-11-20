@@ -31,7 +31,7 @@ const useSubmitContract = (surveyId, answerIds) => {
     }
 
     try {
-      const tx = await contract.write.submit([surveyId, answerIds]);
+      const tx = await contractInstance.write.submit([surveyId, answerIds]);
       setResponse(tx);
     } catch (error) {
       console.error('Error al enviar la respuesta:', error);
