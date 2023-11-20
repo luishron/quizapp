@@ -34,11 +34,7 @@ const QuizTokenBalance = ({ userAddress }) => {
   return (
     <Box>
       {balance ? (
-        <>
-          <Typography component="span">
-            {balance.symbol}: {balance.formatted}
-          </Typography>
-        </>
+        <>{`${balance.formatted} ${balance.symbol}`}</>
       ) : (
         <Typography component="span">0</Typography>
       )}

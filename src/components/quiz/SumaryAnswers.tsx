@@ -16,10 +16,11 @@ const SumaryAnswers = ({ quiz, answers }) => {
   const theme = useTheme();
   const answersArray = Object.keys(answers).map((key) => parseInt(key));
 
-  const { isSubmitting, handleSubmit: handleSubmitAnwers } = useSubmitContract(
-    quiz.id,
-    answersArray
-  );
+  const {
+    response,
+    isSubmitting,
+    handleSubmit: handleSubmitAnwers,
+  } = useSubmitContract(quiz.id, answersArray);
 
   const isMobileOrTablet = useMediaQuery(theme.breakpoints.down('sm'));
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const SumaryAnswers = ({ quiz, answers }) => {
   const isResult = Object.keys(answers).length === quiz.questions.length;
   const handleSubmit = () => {
     handleSubmitAnwers();
-    if (!isSubmitting) {
+    if (response) {
       navigate('/quiz/earn');
     }
   };

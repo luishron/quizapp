@@ -6,11 +6,11 @@ import ConnectButton from '../components/common/ConnectButton';
 import IconMetamask from '../components/common/IconMetamask';
 import SwitchNetwork from '../components/common/SwitchNetwork';
 import MainLayout from '../components/layout/MainLayout';
-import QuizTokenBalance from '../components/quiz/QuizTokenBalance';
 
 export const EarnView = () => {
   const { chain } = useNetwork();
-  const { address, isConnected } = useAccount();
+  const { isConnected } = useAccount();
+
   const isNetwork = chain?.id === 5;
   useEffect(() => {
     const fireConfetti = () => {
@@ -78,7 +78,6 @@ export const EarnView = () => {
               </Typography>
               <Typography variant="body1">
                 You have earned 1 Quiz token!
-                <QuizTokenBalance userAddress={address} />
               </Typography>
             </CardContent>
           </Card>

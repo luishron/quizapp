@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+# Frontend Challenge - Membrane
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Overview](link-to-your-image-1.jpg)
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Surveys are loaded in JSON format. Users can answer these surveys and submit their results, earning tokens in the process. This application also integrates blockchain features like connecting to a Metamask wallet and handling $QUIZ tokens.
 
-## Expanding the ESLint configuration
+## Key Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Vite:** Used for the front-end infrastructure, ensuring efficient project hierarchy, organization of directories, and routing conventions.
+- **React Query:** Manages the app state effectively.
+- **Material UI with React Hook Form:** Enhances UI components.
+- **TypeScript:** Ensures type safety and improves code quality.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **Vite:** A modern and fast module bundler.
+- **React Icons:** To easily include icons in your React project.
+- **React Router Dom:** For managing navigation within the application.
+- **Wagmi & Ethers:** Libraries for interacting with the Ethereum blockchain.
+- **Canvas Confetti:** For visually appealing effects.
+- **Material-UI:** Material-UI components for React.
+- **React Query:** A powerful tool for managing state and server synchronization in React.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Features
+
+- **Metamask Wallet Integration:** Users can connect their Metamask wallets.
+- **Network Switching:** Automatically switches to the Goerli network if the user is not connected.
+- **Token Balance:** Displays the balance of $QUIZ tokens.
+- **Quiz Interaction:** Presents daily trivia with images and a button to start the quiz.
+- **Question Lifecycle:** Displays each question for a set amount of time and moves to the next one, answered or not.
+- **Results Overview:** Shows an overview of all answers at the end of the quiz.
+- **Answer Submission:** Allows users to submit their answers to a validator contract and refreshes the $QUIZ balance.
+
+# Environment Variable Configuration
+
+To ensure the application functions correctly, you will need to set up some environment variables. These variables enable the application to connect to external services like Alchemy for blockchain interactions.
+
+Create a `.env.local` file in the root of your project and add the following variables:
+
+VITE_ALCHEMY_API_KEY=your-alchemy-api-key
+VITE_CONTRACT_ADDRESS=your-contract-address
+
+Replace `your-alchemy-api-key` and `your-contract-address` with your actual keys.
+
+## Resources
+
+- **Alchemy API:** To obtain an Alchemy API key, visit [Alchemy](https://www.alchemy.com/). Alchemy provides tools for developing, deploying, and scaling dApps on Ethereum and other blockchains.
+
+- **Contract Address:** You can find your contract's address on [Goerli Etherscan](https://goerli.etherscan.io/address/0x437ef217203452317c3c955cf282b1ee5f6aaf72#code). Etherscan is a blockchain explorer for Ethereum, allowing you to view transactions, contracts, and more on the blockchain.
+
+## Important
+
+Do not share your private API keys or contract addresses in your public GitHub repository. Ensure that the `.env.local` file is included in your `.gitignore` file.
