@@ -41,9 +41,6 @@ const theme = createTheme({
           borderRadius: '1.5rem',
           fontWeight: 'bold',
         },
-        disabled: {
-          opacity: 0.5,
-        },
       },
     },
   },
