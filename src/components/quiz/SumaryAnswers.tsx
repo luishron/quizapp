@@ -9,10 +9,18 @@ import {
   useTheme,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import useSubmitContract from '../../hooks/useSubmitContract';
 import CountdownTimer from '../common/CountdownTimer';
 
 const SumaryAnswers = ({ quiz, answers }) => {
   const theme = useTheme();
+  const answersArray = Object.keys(answers).map((key) => parseInt(key));
+
+  const { isSubmitting, handleSubmit: handleSubmitAnwers } = useSubmitContract(
+    quiz.id,
+    answersArray
+  );
+
   const isMobileOrTablet = useMediaQuery(theme.breakpoints.down('sm'));
   const navigate = useNavigate();
   const cardStyle = {
@@ -23,9 +31,10 @@ const SumaryAnswers = ({ quiz, answers }) => {
 
   const isResult = Object.keys(answers).length === quiz.questions.length;
   const handleSubmit = () => {
-    console.log('Enviar respuestas:', answers);
-    console.log(Object.keys(answers).length === quiz.questions.length);
-    navigate('/quiz/earn');
+    handleSubmitAnwers();
+    if (!isSubmitting) {
+      navigate('/quiz/earn');
+    }
   };
   return (
     <Card sx={cardStyle}>
@@ -69,8 +78,9 @@ const SumaryAnswers = ({ quiz, answers }) => {
                 variant="contained"
                 color="primary"
                 onClick={handleSubmit}
+                disabled={isSubmitting}
               >
-                Send answers
+                {isSubmitting ? 'Sending...' : 'Send Answers'}
               </Button>
             ) : (
               <CountdownTimer />
