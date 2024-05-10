@@ -1,4 +1,4 @@
-# Frontend Challenge - Membrane
+# QuizApp
 
 ![Project Overview](https://github.com/luishron/FrontendChallenge-Membrane/blob/5de6ecec762d0b0391b95e216023a85c143c3df0/public/img/screen/home.png)
 
